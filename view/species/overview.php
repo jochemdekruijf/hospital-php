@@ -20,7 +20,7 @@
   	 		echo "<tr>";
   	 		echo "<td>" . $patient["species_id"]  . "</td>";  
             echo "<td>" . $patient["species_description"]  . "</td>";     
-            echo "<td class='center'>" . "<a href='#'>edit</a></td>";
+            echo "<td class='center'>" . "<a href='". URL. "species/update/". $patient['species_id']."'>edit</a></td>";
             echo "<td class='center'>" . "<a href='" . URL . "species/delete/". $patient['species_id'] ."'>X</a></td>";  
            	echo "</tr>";  
      } 
