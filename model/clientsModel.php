@@ -44,8 +44,7 @@ function getClient($id){
     return $query->fetch(PDO::FETCH_ASSOC);
 }
  function updateClient($answers){
-   echo $answers['firstname'];
-   echo     $answers['lastname'];
+
 $db = openDatabaseConnection();
 
     $sql = "UPDATE clients SET client_firstname = :firstname, client_lastname = :lastname  WHERE client_id = :id ";

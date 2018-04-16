@@ -22,6 +22,18 @@ function saveSpecies($answers){
     $query->execute();
  
 }
+function getSpecies($id){
+  $db = openDatabaseConnection();
+
+    $sql = "SELECT * FROM species WHERE species_id = :id";
+    $query = $db->prepare($sql);
+    $query->bindParam(":id", $id);
+    $query->execute();
+    $db = null;
+
+    return $query->fetch(PDO::FETCH_ASSOC);
+}
+
 function deleteSpecies($id){
     $db = openDatabaseConnection();
 
@@ -30,4 +42,14 @@ function deleteSpecies($id){
     $query->bindParam(":id", $id);
     $query->execute();
 }
+  function updateSpecie($answers){
+    $db = openDatabaseConnection();
+    $sql = "UPDATE species SET species_description = :specie WHERE species_id = :id ";
+    
+    $query = $db->prepare($sql);
+    $query->bindParam(":specie", $answers['species']);
+    $query->bindParam(":id", $answers['id']);
+    $query->execute();
+ }
+
 ?>

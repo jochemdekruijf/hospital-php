@@ -14,8 +14,7 @@ function gotoPatients()
 }
 function savePatient($answers){
     $db = openDatabaseConnection();
-   $client_id= 1;
-   $species_id = 1;
+  
     $sql = "INSERT INTO patients(patient_name,patient_status,client_id,species_id) VALUES (:name, :status, :client_id, :species_id)";
     
     $query = $db->prepare($sql);
