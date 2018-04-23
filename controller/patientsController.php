@@ -29,9 +29,19 @@ function delete($id)
     header('Location: '.URL."patients");
 }
 
+function edit($id)
+{
+ render("patients/update", array(
+        'clients' => gotoclients($id),
+        'species' => gotospecies($id),
+        'patient' => getPatient($id)
+    ));
+}
 
-
-
+function editSave(){
+    update($_POST);
+   header("Location: ".URL. "patients");
+}
 
 
 ?>
