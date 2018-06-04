@@ -32,8 +32,8 @@ function delete($id)
 function edit($id)
 {
  render("patients/update", array(
-        'clients' => gotoclients($id),
-        'species' => gotospecies($id),
+        'clients' => gotoclients(),
+        'species' => gotospecies(),
         'patient' => getPatient($id)
     ));
 }
